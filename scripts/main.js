@@ -131,8 +131,8 @@ function stageTwoInit() { //INITIATES STAGE TWO DRAW SCENE
 }
 
 //STAGE TWO BLOCKS
-var orangeblktwo = new Block(0 /*x*/ , 150 /*width*/ , 20 /*height*/ , 6/*v*/ , 80 /*interval*/ , 0.4 /*ytopstart*/ , 6 /*numblks*/ , "orange" /*color*/ , 1 /*loopinterval*/ );
-var greyblktwo = new Block(0 /*x*/ , 150 /*width*/ , 20 /*height*/ , 4 /*v*/ , 80 /*interval*/ , 0.4 /*ytopstart*/ , 6 /*numblks*/ , "#333333" /*color*/ , 1 /*loopinterval*/ );
+var orangeblktwo = new Block(0 /*x*/ , 150 /*width*/ , 20 /*height*/ , 5/*v*/ , 80 /*interval*/ , 0.4 /*ytopstart*/ , 6 /*numblks*/ , "orange" /*color*/ , 1 /*loopinterval*/ );
+var greyblktwo = new Block(0 /*x*/ , 150 /*width*/ , 20 /*height*/ , 3 /*v*/ , 80 /*interval*/ , 0.4 /*ytopstart*/ , 6 /*numblks*/ , "#333333" /*color*/ , 1 /*loopinterval*/ );
 
 function drawSceneTwo() { // STAGE TWO
   drawBaseScene();
@@ -158,7 +158,7 @@ function stageThreeInit() { //INITIATES STAGE TWO DRAW SCENE
 
 //STAGE THREE BLOCKS
 var orangeblkthree = new Block(0 /*x*/ , 150 /*width*/ , 20 /*height*/ , 7 /*v*/ , 80 /*interval*/ , 0.4 /*ytopstart*/ , 6 /*numblks*/ , "orange" /*color*/ , 1 /*loopinterval*/ );
-var greyblkthree = new Block(0 /*x*/ , 150 /*width*/ , 20 /*height*/ , 4.5 /*v*/ , 80 /*interval*/ , 0.4 /*ytopstart*/ , 6 /*numblks*/ , "#333333" /*color*/ , 1 /*loopinterval*/ );
+var greyblkthree = new Block(0 /*x*/ , 150 /*width*/ , 20 /*height*/ , 4 /*v*/ , 80 /*interval*/ , 0.4 /*ytopstart*/ , 6 /*numblks*/ , "#333333" /*color*/ , 1 /*loopinterval*/ );
 var greenblkthree = new Block(0 /*x*/ , 10 /*width*/ , 40 /*height*/ , 3 /*v*/ , 120 /*interval*/ , 0.4 /*ytopstart*/ , 4 /*numblks*/ , "green" /*color*/ , 1 /*loopinterval*/ );
 
 
@@ -186,8 +186,8 @@ function stageFourInit() { //INITIATES STAGE FOUR DRAW SCENE
 }
 
 //STAGE FOUR BLOCKS
-var orangeblkfour = new Block(0 /*x*/ , 150 /*width*/ , 20 /*height*/ , 6 /*v*/ , 80 /*interval*/ , 0.4 /*ytopstart*/ , 6 /*numblks*/ , "orange" /*color*/ , 1 /*loopinterval*/ );
-var greyblkfour = new Block(0 /*x*/ , 150 /*width*/ , 20 /*height*/ , 3 /*v*/ , 80 /*interval*/ , 0.4 /*ytopstart*/ , 6 /*numblks*/ , "#333333" /*color*/ , 1 /*loopinterval*/ );
+var orangeblkfour = new Block(0 /*x*/ , 150 /*width*/ , 20 /*height*/ , 5 /*v*/ , 80 /*interval*/ , 0.4 /*ytopstart*/ , 6 /*numblks*/ , "orange" /*color*/ , 1 /*loopinterval*/ );
+var greyblkfour = new Block(0 /*x*/ , 150 /*width*/ , 20 /*height*/ , 2.5 /*v*/ , 80 /*interval*/ , 0.4 /*ytopstart*/ , 6 /*numblks*/ , "#333333" /*color*/ , 1 /*loopinterval*/ );
 var greenblkfour = new Block(0 /*x*/ , 10 /*width*/ , 40 /*height*/ , 1.5 /*v*/ , 120 /*interval*/ , 0.4 /*ytopstart*/ , 4 /*numblks*/ , "green" /*color*/ , 1 /*loopinterval*/ );
 var purpleblkfour = new Block(0 /*x*/ , 250 /*width*/ , 15 /*height*/ , 3 /*v*/ , 120 /*interval*/ , 0.2 /*ytopstart*/ , 3 /*numblks*/ , "purple" /*color*/ , 1 /*loopinterval*/ );
 
@@ -216,11 +216,11 @@ function stageFiveInit() { //INITIATES STAGE FIVE DRAW SCENE
 }
 
 //STAGE FIVE BLOCKS
-var orangeblkfive = new Block(0 /*x*/ , 150 /*width*/ , 20 /*height*/ , 6 /*v*/ , 80 /*interval*/ , 0.4 /*ytopstart*/ , 6 /*numblks*/ , "orange" /*color*/ , 1 /*loopinterval*/ );
-var greyblkfive = new Block(0 /*x*/ , 150 /*width*/ , 20 /*height*/ , 5 /*v*/ , 80 /*interval*/ , 0.4 /*ytopstart*/ , 6 /*numblks*/ , "#333333" /*color*/ , 1 /*loopinterval*/ );
+var orangeblkfive = new Block(0 /*x*/ , 150 /*width*/ , 20 /*height*/ , 5 /*v*/ , 80 /*interval*/ , 0.4 /*ytopstart*/ , 6 /*numblks*/ , "orange" /*color*/ , 1 /*loopinterval*/ );
+var greyblkfive = new Block(0 /*x*/ , 150 /*width*/ , 20 /*height*/ , 4.5 /*v*/ , 80 /*interval*/ , 0.4 /*ytopstart*/ , 6 /*numblks*/ , "#333333" /*color*/ , 1 /*loopinterval*/ );
 var greenblkfive = new Block(0 /*x*/ , 10 /*width*/ , 40 /*height*/ , 1.8 /*v*/ , 120 /*interval*/ , 0.4 /*ytopstart*/ , 4 /*numblks*/ , "green" /*color*/ , 1 /*loopinterval*/ );
 var purpleblkfive = new Block(0 /*x*/ , 250 /*width*/ , 15 /*height*/ , 1.8 /*v*/ , 120 /*interval*/ , 0.2 /*ytopstart*/ , 3 /*numblks*/ , "purple" /*color*/ , 1 /*loopinterval*/ );
-var blueblkfive = new Block(0 /*x*/ , 30 /*width*/ , 30 /*height*/ , 7 /*v*/ , 160 /*interval*/ , 0.2 /*ytopstart*/ , 2 /*numblks*/ , "blue" /*color*/ , 1 /*loopinterval*/ );
+var blueblkfive = new Block(0 /*x*/ , 30 /*width*/ , 30 /*height*/ , 6 /*v*/ , 160 /*interval*/ , 0.2 /*ytopstart*/ , 2 /*numblks*/ , "blue" /*color*/ , 1 /*loopinterval*/ );
 
 function drawSceneFive() { // STAGE FIVE
   drawBaseScene();
@@ -249,10 +249,10 @@ function stageSixInit() { //INITIATES STAGE SIX DRAW SCENE
 
 //STAGE SIX BLOCKS
 var orangeblksix = new Block(0 /*x*/ , 150 /*width*/ , 20 /*height*/ , 5 /*v*/ , 80 /*interval*/ , 0.4 /*ytopstart*/ , 6 /*numblks*/ , "orange" /*color*/ , 1 /*loopinterval*/ );
-var indigoblksix = new Block(0 /*x*/ , 120 /*width*/ , 15 /*height*/ , 6 /*v*/ , 50 /*interval*/ , 0.4 /*ytopstart*/ , 4 /*numblks*/ , "indigo" /*color*/ , 1 /*loopinterval*/ );
+var indigoblksix = new Block(0 /*x*/ , 120 /*width*/ , 15 /*height*/ , 4 /*v*/ , 50 /*interval*/ , 0.4 /*ytopstart*/ , 4 /*numblks*/ , "indigo" /*color*/ , 1 /*loopinterval*/ );
 var greenblksix = new Block(0 /*x*/ , 10 /*width*/ , 40 /*height*/ , 1.2 /*v*/ , 120 /*interval*/ , 0.4 /*ytopstart*/ , 4 /*numblks*/ , "green" /*color*/ , 1 /*loopinterval*/ );
-var purpleblksix = new Block(0 /*x*/ , 250 /*width*/ , 15 /*height*/ , 3.5 /*v*/ , 120 /*interval*/ , 0.2 /*ytopstart*/ , 3 /*numblks*/ , "purple" /*color*/ , 1 /*loopinterval*/ );
-var blueblksix = new Block(0 /*x*/ , 30 /*width*/ , 30 /*height*/ , 3 /*v*/ , 160 /*interval*/ , 0.2 /*ytopstart*/ , 3 /*numblks*/ , "blue" /*color*/ , 1 /*loopinterval*/ );
+var purpleblksix = new Block(0 /*x*/ , 250 /*width*/ , 15 /*height*/ , 3 /*v*/ , 120 /*interval*/ , 0.2 /*ytopstart*/ , 3 /*numblks*/ , "purple" /*color*/ , 1 /*loopinterval*/ );
+var blueblksix = new Block(0 /*x*/ , 30 /*width*/ , 30 /*height*/ , 2.5 /*v*/ , 160 /*interval*/ , 0.2 /*ytopstart*/ , 3 /*numblks*/ , "blue" /*color*/ , 1 /*loopinterval*/ );
 var greyblksix = new Block(0 /*x*/ , 150 /*width*/ , 20 /*height*/ , 2 /*v*/ , 80 /*interval*/ , 0.4 /*ytopstart*/ , 6 /*numblks*/ , "#333333" /*color*/ , 1 /*loopinterval*/ );
 
 function drawSceneSix() { // STAGE SIX
@@ -282,13 +282,13 @@ function stageSevenInit() { //INITIATES STAGE SEVEN DRAW SCENE
 }
 
 //STAGE SEVEN BLOCKS
-var cyanblkseven = new Block(0 /*x*/ , 40 /*width*/ , 60 /*height*/ , 5 /*v*/ , 100 /*interval*/ , 0.4 /*ytopstart*/ , 4 /*numblks*/ , "#208AAE" /*color*/ , 1 /*loopinterval*/ );
-var indigoblkseven = new Block(0 /*x*/ , 120 /*width*/ , 15 /*height*/ , 4 /*v*/ , 50 /*interval*/ , 0.4 /*ytopstart*/ , 4 /*numblks*/ , "indigo" /*color*/ , 1 /*loopinterval*/ );
+var cyanblkseven = new Block(0 /*x*/ , 40 /*width*/ , 60 /*height*/ , 4 /*v*/ , 100 /*interval*/ , 0.4 /*ytopstart*/ , 4 /*numblks*/ , "#208AAE" /*color*/ , 1 /*loopinterval*/ );
+var indigoblkseven = new Block(0 /*x*/ , 120 /*width*/ , 15 /*height*/ , 3 /*v*/ , 50 /*interval*/ , 0.4 /*ytopstart*/ , 4 /*numblks*/ , "indigo" /*color*/ , 1 /*loopinterval*/ );
 var magentablkseven = new Block(0 /*x*/ , 10 /*width*/ , 30 /*height*/ , 0.3 /*v*/ , 60 /*interval*/ , 0.4 /*ytopstart*/ , 8 /*numblks*/ , "#D30C7B" /*color*/ , 1 /*loopinterval*/ );
 var purpleblkseven = new Block(0 /*x*/ , 50 /*width*/ , 15 /*height*/ , 1.5 /*v*/ , 120 /*interval*/ , 0.2 /*ytopstart*/ , 3 /*numblks*/ , "purple" /*color*/ , 1 /*loopinterval*/ );
-var sandybrownblkseven = new Block(0 /*x*/ , 60 /*width*/ , 30 /*height*/ , 2.5 /*v*/ , 130 /*interval*/ , 0.2 /*ytopstart*/ , 2 /*numblks*/ , "#F09D51" /*color*/ , 1 /*loopinterval*/ );
+var sandybrownblkseven = new Block(0 /*x*/ , 60 /*width*/ , 30 /*height*/ , 2 /*v*/ , 130 /*interval*/ , 0.2 /*ytopstart*/ , 2 /*numblks*/ , "#F09D51" /*color*/ , 1 /*loopinterval*/ );
 var redblkseven = new Block(0 /*x*/ , 400 /*width*/ , 15 /*height*/ , 15 /*v*/ , 160 /*interval*/ , 0.2 /*ytopstart*/ , 1 /*numblks*/ , "red" /*color*/ , 1 /*loopinterval*/ );
-var skyblueblkseven = new Block(0 /*x*/ , 15 /*width*/ , 15 /*height*/ , 8 /*v*/ , 100 /*interval*/ , 0.2 /*ytopstart*/ , 3 /*numblks*/ , "#86BBD8" /*color*/ , 1 /*loopinterval*/ );
+var skyblueblkseven = new Block(0 /*x*/ , 15 /*width*/ , 15 /*height*/ , 6 /*v*/ , 100 /*interval*/ , 0.2 /*ytopstart*/ , 3 /*numblks*/ , "#86BBD8" /*color*/ , 1 /*loopinterval*/ );
 
 function drawSceneSeven() { // FINAL STAGE: STAGE SEVEN
   drawBaseScene();
