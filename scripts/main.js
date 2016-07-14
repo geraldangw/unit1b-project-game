@@ -83,7 +83,7 @@ Block.prototype.createBlk = function() {
       ctx.fillRect(this.x, yblks[i], this.width, this.height); //DRAWS THE RECTANGLE FROM THE rect FUNCTION
       this.x += this.v; //BUILDS THE MOVEMENT UPON SET INTERVAL REFRESH RATE BY V(VELOCITY).
     }
-    if (ppositionx > this.x && ppositionx < this.x + this.width && ppositiony > yblks[i] && ppositiony < yblks[i] + this.height) {
+    if (ppositionx > this.x && ppositionx < this.x + this.width && ppositiony > yblks[i] && ppositiony < yblks[i] + this.height) { //TRACKING COLLISION COURSE
       ppositionx = startposx;
       ppositiony = startposy;
     }
@@ -92,18 +92,18 @@ Block.prototype.createBlk = function() {
 
 function drawBaseScene() { //FUNCTION TO DRAW BASE SCENE
   ctx.fillStyle = "white";
-  rect(0, 0, WIDTH, HEIGHT);
+  rect(0, 0, WIDTH, HEIGHT); //DRAWS THE BOARD
   ctx.fillStyle = "red";
-  var playerposition = circle(ppositionx, ppositiony, circlesize);
+  var playerposition = circle(ppositionx, ppositiony, circlesize); //DRAWS THE PLAYER ICON
   ctx.fillStyle = "#C5D86D";
   ctx.strokeStyle = "#C5D86D";
-  rect(0, 0, WIDTH, destheight);
+  rect(0, 0, WIDTH, destheight); //DRAWS THE DESTINATION
 }
 
 //STAGE ONE BLOCKS
-var greyblkone = new Block(0 /*x*/ , 150 /*width*/ , 20 /*height*/ , 3 /*v*/ , 80 /*interval*/ , 0.4 /*ytopstart*/ , 6 /*numblks*/ , "#333333" /*color*/ , 1 /*loopinterval*/ );
+var greyblkone = new Block(0 /*x*/ , 150 /*width*/ , 20 /*height*/ , 7 /*v*/ , 80 /*interval*/ , 0.4 /*ytopstart*/ , 6 /*numblks*/ , "#333333" /*color*/ , 1 /*loopinterval*/ );
 
-function drawSceneOne() { // STAGE 1
+function drawSceneOne() { // STAGE ONE
   drawBaseScene();
   greyblkone.createBlk();
   checkWinOne();
@@ -125,17 +125,17 @@ function stageTwoInit() { //INITIATES STAGE TWO DRAW SCENE
 }
 
 //STAGE TWO BLOCKS
-var orangeblktwo = new Block(0 /*x*/ , 150 /*width*/ , 20 /*height*/ , 5.5 /*v*/ , 80 /*interval*/ , 0.4 /*ytopstart*/ , 6 /*numblks*/ , "orange" /*color*/ , 1 /*loopinterval*/ );
-var greyblktwo = new Block(0 /*x*/ , 150 /*width*/ , 20 /*height*/ , 3 /*v*/ , 80 /*interval*/ , 0.4 /*ytopstart*/ , 6 /*numblks*/ , "#333333" /*color*/ , 1 /*loopinterval*/ );
+var orangeblktwo = new Block(0 /*x*/ , 150 /*width*/ , 20 /*height*/ , 7/*v*/ , 80 /*interval*/ , 0.4 /*ytopstart*/ , 6 /*numblks*/ , "orange" /*color*/ , 1 /*loopinterval*/ );
+var greyblktwo = new Block(0 /*x*/ , 150 /*width*/ , 20 /*height*/ , 5 /*v*/ , 80 /*interval*/ , 0.4 /*ytopstart*/ , 6 /*numblks*/ , "#333333" /*color*/ , 1 /*loopinterval*/ );
 
-function drawSceneTwo() { // STAGE 2
+function drawSceneTwo() { // STAGE TWO
   drawBaseScene();
   greyblktwo.createBlk();
   orangeblktwo.createBlk();
   checkWinTwo();
 }
 
-function checkWinTwo() { // CHECKS IF PLAYER CLEARS STAGE ONE AND INITIATES STAGE TWO AND RETURNS PLAYER TO ORIGINAL POSITION
+function checkWinTwo() { // CHECKS IF PLAYER CLEARS STAGE TWO AND INITIATES STAGE THREE AND RETURNS PLAYER TO ORIGINAL POSITION
   if (ppositiony <= 15) {
     clearInterval(stagetwo);
     setTimeout(stageThreeInit, 1000);
@@ -151,12 +151,12 @@ function stageThreeInit() { //INITIATES STAGE TWO DRAW SCENE
 }
 
 //STAGE THREE BLOCKS
-var orangeblkthree = new Block(0 /*x*/ , 150 /*width*/ , 20 /*height*/ , 5.5 /*v*/ , 80 /*interval*/ , 0.4 /*ytopstart*/ , 6 /*numblks*/ , "orange" /*color*/ , 1 /*loopinterval*/ );
-var greyblkthree = new Block(0 /*x*/ , 150 /*width*/ , 20 /*height*/ , 3 /*v*/ , 80 /*interval*/ , 0.4 /*ytopstart*/ , 6 /*numblks*/ , "#333333" /*color*/ , 1 /*loopinterval*/ );
-var greenblkthree = new Block(0 /*x*/ , 10 /*width*/ , 40 /*height*/ , 1.5 /*v*/ , 120 /*interval*/ , 0.4 /*ytopstart*/ , 4 /*numblks*/ , "green" /*color*/ , 1 /*loopinterval*/ );
+var orangeblkthree = new Block(0 /*x*/ , 150 /*width*/ , 20 /*height*/ , 7 /*v*/ , 80 /*interval*/ , 0.4 /*ytopstart*/ , 6 /*numblks*/ , "orange" /*color*/ , 1 /*loopinterval*/ );
+var greyblkthree = new Block(0 /*x*/ , 150 /*width*/ , 20 /*height*/ , 5 /*v*/ , 80 /*interval*/ , 0.4 /*ytopstart*/ , 6 /*numblks*/ , "#333333" /*color*/ , 1 /*loopinterval*/ );
+var greenblkthree = new Block(0 /*x*/ , 10 /*width*/ , 40 /*height*/ , 2.5 /*v*/ , 120 /*interval*/ , 0.4 /*ytopstart*/ , 4 /*numblks*/ , "green" /*color*/ , 1 /*loopinterval*/ );
 
 
-function drawSceneThree() { // STAGE 2
+function drawSceneThree() { // STAGE THREE
   drawBaseScene();
   greyblkthree.createBlk();
   orangeblkthree.createBlk();
@@ -164,7 +164,7 @@ function drawSceneThree() { // STAGE 2
   checkWinThree();
 }
 
-function checkWinThree() { // CHECKS IF PLAYER CLEARS STAGE ONE AND INITIATES STAGE TWO AND RETURNS PLAYER TO ORIGINAL POSITION
+function checkWinThree() { // CHECKS IF PLAYER CLEARS STAGE THREE AND INITIATES STAGE FOUR AND RETURNS PLAYER TO ORIGINAL POSITION
   if (ppositiony <= 15) {
     clearInterval(stagethree);
     setTimeout(stageFourInit, 1000);
@@ -175,17 +175,17 @@ function checkWinThree() { // CHECKS IF PLAYER CLEARS STAGE ONE AND INITIATES ST
   }
 }
 
-function stageFourInit() { //INITIATES STAGE TWO DRAW SCENE
+function stageFourInit() { //INITIATES STAGE FOUR DRAW SCENE
   this.stagefour = setInterval(drawSceneFour, 40);
 }
 
 //STAGE FOUR BLOCKS
-var orangeblkfour = new Block(0 /*x*/ , 150 /*width*/ , 20 /*height*/ , 5.5 /*v*/ , 80 /*interval*/ , 0.4 /*ytopstart*/ , 6 /*numblks*/ , "orange" /*color*/ , 1 /*loopinterval*/ );
-var greyblkfour = new Block(0 /*x*/ , 150 /*width*/ , 20 /*height*/ , 3 /*v*/ , 80 /*interval*/ , 0.4 /*ytopstart*/ , 6 /*numblks*/ , "#333333" /*color*/ , 1 /*loopinterval*/ );
-var greenblkfour = new Block(0 /*x*/ , 10 /*width*/ , 40 /*height*/ , 0.6 /*v*/ , 120 /*interval*/ , 0.4 /*ytopstart*/ , 4 /*numblks*/ , "green" /*color*/ , 1 /*loopinterval*/ );
-var purpleblkfour = new Block(0 /*x*/ , 250 /*width*/ , 15 /*height*/ , 1.5 /*v*/ , 120 /*interval*/ , 0.2 /*ytopstart*/ , 3 /*numblks*/ , "purple" /*color*/ , 1 /*loopinterval*/ );
+var orangeblkfour = new Block(0 /*x*/ , 150 /*width*/ , 20 /*height*/ , 6.5 /*v*/ , 80 /*interval*/ , 0.4 /*ytopstart*/ , 6 /*numblks*/ , "orange" /*color*/ , 1 /*loopinterval*/ );
+var greyblkfour = new Block(0 /*x*/ , 150 /*width*/ , 20 /*height*/ , 4 /*v*/ , 80 /*interval*/ , 0.4 /*ytopstart*/ , 6 /*numblks*/ , "#333333" /*color*/ , 1 /*loopinterval*/ );
+var greenblkfour = new Block(0 /*x*/ , 10 /*width*/ , 40 /*height*/ , 2 /*v*/ , 120 /*interval*/ , 0.4 /*ytopstart*/ , 4 /*numblks*/ , "green" /*color*/ , 1 /*loopinterval*/ );
+var purpleblkfour = new Block(0 /*x*/ , 250 /*width*/ , 15 /*height*/ , 2.5 /*v*/ , 120 /*interval*/ , 0.2 /*ytopstart*/ , 3 /*numblks*/ , "purple" /*color*/ , 1 /*loopinterval*/ );
 
-function drawSceneFour() { // STAGE 2
+function drawSceneFour() { // STAGE FOUR
   drawBaseScene();
   greyblkfour.createBlk();
   orangeblkfour.createBlk();
@@ -194,7 +194,7 @@ function drawSceneFour() { // STAGE 2
   checkWinFour();
 }
 
-function checkWinFour() { // CHECKS IF PLAYER CLEARS STAGE ONE AND INITIATES STAGE TWO AND RETURNS PLAYER TO ORIGINAL POSITION
+function checkWinFour() { // CHECKS IF PLAYER CLEARS STAGE FOUR AND INITIATES STAGE FIVE AND RETURNS PLAYER TO ORIGINAL POSITION
   if (ppositiony <= 15) {
     clearInterval(stagefour);
     setTimeout(stageFiveInit, 1000);
@@ -205,18 +205,18 @@ function checkWinFour() { // CHECKS IF PLAYER CLEARS STAGE ONE AND INITIATES STA
   }
 }
 
-function stageFiveInit() { //INITIATES STAGE TWO DRAW SCENE
+function stageFiveInit() { //INITIATES STAGE FIVE DRAW SCENE
   this.stagefive = setInterval(drawSceneFive, 40);
 }
 
 //STAGE FIVE BLOCKS
-var orangeblkfive = new Block(0 /*x*/ , 150 /*width*/ , 20 /*height*/ , 5.5 /*v*/ , 80 /*interval*/ , 0.4 /*ytopstart*/ , 6 /*numblks*/ , "orange" /*color*/ , 1 /*loopinterval*/ );
-var greyblkfive = new Block(0 /*x*/ , 150 /*width*/ , 20 /*height*/ , 3 /*v*/ , 80 /*interval*/ , 0.4 /*ytopstart*/ , 6 /*numblks*/ , "#333333" /*color*/ , 1 /*loopinterval*/ );
-var greenblkfive = new Block(0 /*x*/ , 10 /*width*/ , 40 /*height*/ , 0.6 /*v*/ , 120 /*interval*/ , 0.4 /*ytopstart*/ , 4 /*numblks*/ , "green" /*color*/ , 1 /*loopinterval*/ );
+var orangeblkfive = new Block(0 /*x*/ , 150 /*width*/ , 20 /*height*/ , 6.5 /*v*/ , 80 /*interval*/ , 0.4 /*ytopstart*/ , 6 /*numblks*/ , "orange" /*color*/ , 1 /*loopinterval*/ );
+var greyblkfive = new Block(0 /*x*/ , 150 /*width*/ , 20 /*height*/ , 4 /*v*/ , 80 /*interval*/ , 0.4 /*ytopstart*/ , 6 /*numblks*/ , "#333333" /*color*/ , 1 /*loopinterval*/ );
+var greenblkfive = new Block(0 /*x*/ , 10 /*width*/ , 40 /*height*/ , 1.2 /*v*/ , 120 /*interval*/ , 0.4 /*ytopstart*/ , 4 /*numblks*/ , "green" /*color*/ , 1 /*loopinterval*/ );
 var purpleblkfive = new Block(0 /*x*/ , 250 /*width*/ , 15 /*height*/ , 1.5 /*v*/ , 120 /*interval*/ , 0.2 /*ytopstart*/ , 3 /*numblks*/ , "purple" /*color*/ , 1 /*loopinterval*/ );
-var blueblkfive = new Block(0 /*x*/ , 30 /*width*/ , 30 /*height*/ , 2.5 /*v*/ , 160 /*interval*/ , 0.2 /*ytopstart*/ , 2 /*numblks*/ , "blue" /*color*/ , 1 /*loopinterval*/ );
+var blueblkfive = new Block(0 /*x*/ , 30 /*width*/ , 30 /*height*/ , 7 /*v*/ , 160 /*interval*/ , 0.2 /*ytopstart*/ , 2 /*numblks*/ , "blue" /*color*/ , 1 /*loopinterval*/ );
 
-function drawSceneFive() { // STAGE 2
+function drawSceneFive() { // STAGE FIVE
   drawBaseScene();
   greyblkfive.createBlk();
   orangeblkfive.createBlk();
@@ -226,7 +226,7 @@ function drawSceneFive() { // STAGE 2
   checkWinFive();
 }
 
-function checkWinFive() { // CHECKS IF PLAYER CLEARS STAGE ONE AND INITIATES STAGE TWO AND RETURNS PLAYER TO ORIGINAL POSITION
+function checkWinFive() { // CHECKS IF PLAYER CLEARS STAGE FIVE AND INITIATES STAGE SIX AND RETURNS PLAYER TO ORIGINAL POSITION
   if (ppositiony <= 15) {
     clearInterval(stagefive);
     setTimeout(stageSixInit, 1000);
@@ -237,39 +237,41 @@ function checkWinFive() { // CHECKS IF PLAYER CLEARS STAGE ONE AND INITIATES STA
   }
 }
 
-function stageSixInit() { //INITIATES STAGE TWO DRAW SCENE
+function stageSixInit() { //INITIATES STAGE SIX DRAW SCENE
   this.stagesix = setInterval(drawSceneSix, 40);
 }
 
 //STAGE SIX BLOCKS
 var orangeblksix = new Block(0 /*x*/ , 150 /*width*/ , 20 /*height*/ , 5.5 /*v*/ , 80 /*interval*/ , 0.4 /*ytopstart*/ , 6 /*numblks*/ , "orange" /*color*/ , 1 /*loopinterval*/ );
-var indigoblksix = new Block(0 /*x*/ , 120 /*width*/ , 15 /*height*/ , 4 /*v*/ , 50 /*interval*/ , 0.4 /*ytopstart*/ , 4 /*numblks*/ , "indigo" /*color*/ , 1 /*loopinterval*/ );
+var indigoblksix = new Block(0 /*x*/ , 120 /*width*/ , 15 /*height*/ , 7 /*v*/ , 50 /*interval*/ , 0.4 /*ytopstart*/ , 4 /*numblks*/ , "indigo" /*color*/ , 1 /*loopinterval*/ );
 var greenblksix = new Block(0 /*x*/ , 10 /*width*/ , 40 /*height*/ , 0.6 /*v*/ , 120 /*interval*/ , 0.4 /*ytopstart*/ , 4 /*numblks*/ , "green" /*color*/ , 1 /*loopinterval*/ );
-var purpleblksix = new Block(0 /*x*/ , 250 /*width*/ , 15 /*height*/ , 1.5 /*v*/ , 120 /*interval*/ , 0.2 /*ytopstart*/ , 3 /*numblks*/ , "purple" /*color*/ , 1 /*loopinterval*/ );
-var blueblksix = new Block(0 /*x*/ , 30 /*width*/ , 30 /*height*/ , 2.5 /*v*/ , 160 /*interval*/ , 0.2 /*ytopstart*/ , 2 /*numblks*/ , "blue" /*color*/ , 1 /*loopinterval*/ );
+var purpleblksix = new Block(0 /*x*/ , 250 /*width*/ , 15 /*height*/ , 3 /*v*/ , 120 /*interval*/ , 0.2 /*ytopstart*/ , 3 /*numblks*/ , "purple" /*color*/ , 1 /*loopinterval*/ );
+var blueblksix = new Block(0 /*x*/ , 30 /*width*/ , 30 /*height*/ , 4 /*v*/ , 160 /*interval*/ , 0.2 /*ytopstart*/ , 3 /*numblks*/ , "blue" /*color*/ , 1 /*loopinterval*/ );
+var greyblksix = new Block(0 /*x*/ , 150 /*width*/ , 20 /*height*/ , 1.5 /*v*/ , 80 /*interval*/ , 0.4 /*ytopstart*/ , 6 /*numblks*/ , "#333333" /*color*/ , 1 /*loopinterval*/ );
 
-function drawSceneSix() { // STAGE 2
+function drawSceneSix() { // STAGE SIX
   drawBaseScene();
   indigoblksix.createBlk();
   orangeblksix.createBlk();
   greenblksix.createBlk();
   purpleblksix.createBlk();
   blueblksix.createBlk();
+  greyblksix.createBlk();
   checkWinSix();
 }
 
-function checkWinSix() { // CHECKS IF PLAYER CLEARS STAGE ONE AND INITIATES STAGE TWO AND RETURNS PLAYER TO ORIGINAL POSITION
+function checkWinSix() { // CHECKS IF PLAYER CLEARS STAGE SIX AND INITIATES STAGE SEVEN AND RETURNS PLAYER TO ORIGINAL POSITION
   if (ppositiony <= 15) {
     clearInterval(stagesix);
-    setTimeout(stageSevenInit, 2000);
+    setTimeout(stageSevenInit, 1000);
     ppositiony = startposy;
     ppositionx = startposx;
     level++;
-    $('#level').html('LEVEL ' + level);
+    $('#level').html('FINAL STAGE: LEVEL ' + level);
   }
 }
 
-function stageSevenInit() { //INITIATES STAGE TWO DRAW SCENE
+function stageSevenInit() { //INITIATES STAGE SEVEN DRAW SCENE
   this.stageseven = setInterval(drawSceneSeven, 40);
 }
 
@@ -280,9 +282,9 @@ var magentablkseven = new Block(0 /*x*/ , 10 /*width*/ , 30 /*height*/ , 0.3 /*v
 var purpleblkseven = new Block(0 /*x*/ , 50 /*width*/ , 15 /*height*/ , 1.5 /*v*/ , 120 /*interval*/ , 0.2 /*ytopstart*/ , 3 /*numblks*/ , "purple" /*color*/ , 1 /*loopinterval*/ );
 var sandybrownblkseven = new Block(0 /*x*/ , 60 /*width*/ , 30 /*height*/ , 2.5 /*v*/ , 130 /*interval*/ , 0.2 /*ytopstart*/ , 2 /*numblks*/ , "#F09D51" /*color*/ , 1 /*loopinterval*/ );
 var redblkseven = new Block(0 /*x*/ , 400 /*width*/ , 15 /*height*/ , 15 /*v*/ , 160 /*interval*/ , 0.2 /*ytopstart*/ , 1 /*numblks*/ , "red" /*color*/ , 1 /*loopinterval*/ );
-var skyblueblkseven = new Block(0 /*x*/ , 15 /*width*/ , 15 /*height*/ , 5 /*v*/ , 100 /*interval*/ , 0.2 /*ytopstart*/ , 3 /*numblks*/ , "#86BBD8" /*color*/ , 1 /*loopinterval*/ );
+var skyblueblkseven = new Block(0 /*x*/ , 15 /*width*/ , 15 /*height*/ , 8 /*v*/ , 100 /*interval*/ , 0.2 /*ytopstart*/ , 3 /*numblks*/ , "#86BBD8" /*color*/ , 1 /*loopinterval*/ );
 
-function drawSceneSeven() { // STAGE 2
+function drawSceneSeven() { // FINAL STAGE: STAGE SEVEN
   drawBaseScene();
   cyanblkseven.createBlk();
   indigoblkseven.createBlk();
@@ -294,47 +296,12 @@ function drawSceneSeven() { // STAGE 2
   checkWinSeven();
 }
 
-function checkWinSeven() { // CHECKS IF PLAYER CLEARS STAGE ONE AND INITIATES STAGE TWO AND RETURNS PLAYER TO ORIGINAL POSITION
+function checkWinSeven() { // CHECKS IF PLAYER CLEARS STAGE SEVEN AND INITIATES STAGE EIGHT AND RETURNS PLAYER TO ORIGINAL POSITION
   if (ppositiony <= 15) {
     clearInterval(stageseven);
-    setTimeout(stageEightInit, 2000);
     ppositiony = startposy;
     ppositionx = startposx;
     level++;
-    $('#level').html('LEVEL ' + level);
+    $('#level').html("YOU HAVE CROSSED THE DMZ.");
   }
 }
-
-function stageEightInit() { //INITIATES STAGE TWO DRAW SCENE
-  this.stageeight = setInterval(drawSceneEight, 40);
-}
-
-//STAGE EIGHT BLOCKS
-var cyanblkeight = new Block(0 /*x*/ , 200 /*width*/ , 40 /*height*/ , 7 /*v*/ , 40 /*interval*/ , 0.4 /*ytopstart*/ , 7 /*numblks*/ , "#208AAE" /*color*/ , 1 /*loopinterval*/ );
-var indigoblkeight = new Block(0 /*x*/ , 200 /*width*/ , 40 /*height*/ , 4 /*v*/ , 40 /*interval*/ , 0.4 /*ytopstart*/ , 7 /*numblks*/ , "indigo" /*color*/ , 1 /*loopinterval*/ );
-var magentablkeight = new Block(0 /*x*/ , 200 /*width*/ , 40 /*height*/ , 0.3 /*v*/ , 40 /*interval*/ , 0.4 /*ytopstart*/ , 7 /*numblks*/ , "#D30C7B" /*color*/ , 1 /*loopinterval*/ );
-var purpleblkeight = new Block(0 /*x*/ , 30 /*width*/ , 60 /*height*/ , 2.5  /*v*/ , 60 /*interval*/ , 0.6 /*ytopstart*/ , 4 /*numblks*/ , "purple" /*color*/ , 1 /*loopinterval*/ );
-var sandybrownblkeight = new Block(0 /*x*/ , 30 /*width*/ , 60 /*height*/ , 2.5 /*v*/ , 60 /*interval*/ , 0.2 /*ytopstart*/ , 4 /*numblks*/ , "#F09D51" /*color*/ , 1 /*loopinterval*/ );
-var skyblueblkeight = new Block(0 /*x*/ , 35 /*width*/ , 65 /*height*/ , 10 /*v*/ , 60 /*interval*/ , 0.2 /*ytopstart*/ , 4 /*numblks*/ , "#86BBD8" /*color*/ , 1 /*loopinterval*/ );
-
-function drawSceneEight() { // STAGE 2
-  drawBaseScene();
-  cyanblkeight.createBlk();
-  indigoblkeight.createBlk();
-  magentablkeight.createBlk();
-  purpleblkeight.createBlk();
-  sandybrownblkeigth.createBlk();
-  skyblueblkeight.createBlk();
-  // checkWinEight();
-}
-
-// function checkWinEight() { // CHECKS IF PLAYER CLEARS STAGE ONE AND INITIATES STAGE TWO AND RETURNS PLAYER TO ORIGINAL POSITION
-//   if (ppositiony <= 15) {
-//     clearInterval(stageeight);
-//     setTimeout(stageNineInit, 2000);
-//     ppositiony = startposy;
-//     ppositionx = startposx;
-//     level++;
-//     $('#level').html('LEVEL ' + level);
-//   }
-// }
