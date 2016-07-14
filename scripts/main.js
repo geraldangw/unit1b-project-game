@@ -16,6 +16,13 @@ function init() { //CANVAS INITIALIZATION AND DRAW SCENE REFRESH RATE
   canvas = document.getElementById("canvas");
   ctx = canvas.getContext("2d");
   this.stageone = setInterval(drawSceneOne, 40);
+  $('button').click(reLoad);
+}
+
+init();
+
+function reLoad() {
+  location.reload();
 }
 
 function circle(x, y, r) { //FUNCTION TO CREATE CIRCLE (PLAYER ICON)
@@ -57,8 +64,7 @@ function doKeyDown(evt) { //KEYDOWN FOR PLAYER MOVEMENTS
   }
 }
 
-init(); //INITIALIZING CDIRECTIONAL KEYS ON COMMAND
-window.addEventListener('keydown', doKeyDown, true);
+window.addEventListener('keydown', doKeyDown, true); //INITIALIZING CDIRECTIONAL KEYS ON COMMAND
 
 function Block(x, width, height, v, interval, ytopstart, numblks, color, loopinterval) {
   this.x = x; //X ORIGINAL STARTING POSITION

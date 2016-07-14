@@ -6,7 +6,7 @@ canvas {
 }
 h1 {
   text-align: center;
-  margin-top: 6%;
+  margin-top: 8%;
   font-weight: bold;
   color: #333333;
 }
@@ -16,4 +16,9 @@ h2 {
   margin-bottom: 1%;
   color: #CCCCCC;
   font-size: 1.5em;
+}
+button {
+  display: block;
+  margin: 0 auto;
+  margin-top: 2%;
 }
