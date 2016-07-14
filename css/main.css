@@ -1,0 +1,19 @@
+canvas {
+  display: block;
+  margin: 0 auto;
+  border: 1px solid grey;
+  margin-top: 2%;
+}
+h1 {
+  text-align: center;
+  margin-top: 9.5%;
+  font-weight: bold;
+  color: #333333;
+}
+h2 {
+  text-align: center;
+  margin-top: 2%;
+  margin-bottom: 1%;
+  color: #CCCCCC;
+  font-size: 1.5em;
+}
